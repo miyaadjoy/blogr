@@ -1,0 +1,65 @@
+.tools
+{
+    &-wrapper
+    {
+        position: relative;
+        margin-bottom: 6.25rem;
+        overflow: hidden;
+        &::before
+        {
+            @include breakpoint-up(large)
+            {   content: "";
+                position: absolute;
+                background-image: url(../../images/illustration-laptop-desktop.svg);
+                background-repeat: no-repeat;
+                background-position: top 0px left -285px;
+                background-size: 69%;
+                width: 100%;
+                height: 135%;
+                
+            }
+        }
+    }
+
+    @include breakpoint-up(large)
+    {
+        display: flex;
+        align-items: center;
+        gap: 5%;
+
+        height: 50rem;
+    }
+
+    &__image
+    {
+        flex: 50%;
+        img 
+        {
+            width: 100%;
+        }
+
+    }
+
+
+    &__text
+    {
+        flex: 50%;
+        text-align: center;
+        @include breakpoint-up(large)
+        {
+            text-align: start;
+        }
+        
+    }
+
+    &__heading
+    {
+        color: $veryDarkBlackBlue;
+        margin-bottom: 2rem;
+    }
+
+    &__desc:not(:last-child)
+    {
+        margin-bottom: 3rem;
+    }
+}

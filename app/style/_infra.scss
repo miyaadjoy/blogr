@@ -1,0 +1,101 @@
+.infra
+{
+    &-wrapper
+    {
+        background-color: $veryDarkGrayBlue;
+        border-bottom-left-radius: 100px;
+        border-top-right-radius: 100px;
+        position: relative;
+        
+        &::before
+        { 
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url(../../images/bg-pattern-circles.svg);
+            background-repeat: no-repeat;
+            background-position: top -207px left -111px;
+            background-size: 160%;
+            border-top-right-radius: 100px;
+
+            @include breakpoint-up(large)
+            {
+                background-position: top -525px left -210px;
+                background-size: 70%;
+            }
+        }
+    }
+
+    text-align: center;
+    padding-top: 14.375rem;
+    padding-bottom: 7.5rem;
+    margin-bottom: 4rem;
+    @include breakpoint-up(large)
+    {
+        padding-top: 6.5625rem;
+        padding-bottom: 6.5625rem;
+        margin-bottom: 5rem;
+    }
+    position: relative;
+
+    @include breakpoint-up(large)
+    {
+        text-align: start;
+        display: flex;
+        align-items: center;
+    }
+
+    
+    &__image
+    {
+        flex: 50%;
+        
+        &::before
+        {   
+            content: "";
+            position: absolute;
+           
+            top: -260px;
+            left: -30px;
+            bottom: 0;
+            right: 0;
+            background-image: url(../../images/illustration-phones.svg);
+            background-repeat: no-repeat;
+            background-position: top 80px left -5px;
+            background-size: 110%;
+
+            @include breakpoint-up(large)
+            {
+               
+                width: 105%;
+                height: 200%;
+                background-position: top 200px left 1px;
+                background-size: 40%;
+            }
+        }
+
+    }
+
+    &__text
+    {
+        flex: 50%;
+    }
+    &__heading
+    {
+        font-family: 'Overpass', sans-serif;
+        color: $white;
+        
+
+        margin-bottom: 2rem;
+        
+        
+    }
+
+    &__desc
+    {
+        color: $white;
+    }
+}

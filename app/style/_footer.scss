@@ -1,0 +1,72 @@
+.footer
+{
+    &-wrapper
+    {
+        background-color: $veryDarkBlackBlue;
+        border-top-right-radius: 100px;
+    }
+
+
+
+    text-align: center;
+    padding-top: 4.6875rem;
+    padding-bottom: 4.6875rem;
+
+    @include breakpoint-up(large)
+    {
+        text-align: start;
+        display: flex;
+        // justify-content: space-between;
+        
+    }
+
+    &__logo
+    {
+        flex: 1;
+        display: block;
+        margin-bottom: 5rem;
+
+    }
+
+    &__link
+    {
+        flex: 1;
+        >a 
+        {
+            display: block;
+            color: $white;
+            font-weight: 500;
+            margin-bottom: 2.1875rem;
+        }
+
+        &:not(:last-child)
+        {
+            @include breakpoint-down(medium)
+            {
+                margin-bottom: 3.4375rem;
+            }
+        }
+    }
+
+    &__subLinks
+    {
+        a
+        {
+            display: block;
+            color: $white;
+            
+            transition: all .3s ease-in-out;
+            &:not(:last-child)
+            {
+                margin-bottom: 1rem;
+
+            }
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+}

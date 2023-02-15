@@ -1,0 +1,453 @@
+.header-wrapper
+{
+    position: relative;
+    border-bottom-left-radius: 100px;
+    background-image: linear-gradient(to bottom, $veryLightRed,$lightRed);
+    
+    @include breakpoint-up(large)
+    {
+        background-image: linear-gradient(to right, $veryLightRed,$lightRed);
+    }
+
+    &::before
+    {
+        content: "";
+        position: absolute;
+        background-image: url('../../images/bg-pattern-intro-mobile.svg');
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 400%;
+        background-position: top -280px left -385px;
+        border-bottom-left-radius: 100px;
+        @include breakpoint-up(large)
+        {
+            background-image: url('../../images/bg-pattern-intro-desktop.svg');background-size: 215%;
+            background-position: top -1300px left -440px;
+
+        }
+        
+        
+    }
+}
+
+
+.header
+{
+
+    
+    position: relative;
+    margin-bottom: 6.25rem;
+    @include breakpoint-up(large)
+    {
+        margin-bottom: 4.375rem;
+    }
+
+    &__nav
+    {
+        padding-top: 3.4375rem;
+        padding-bottom: 6.875rem;
+        @include breakpoint-up(large)
+        {
+            padding-bottom: 8.125rem;
+        }
+    }
+    &__logo
+    {
+        display: inline-block;
+        margin-right: 4.0625rem;
+    }
+
+    &__links
+    {
+        position: relative;
+        >div a
+        {
+            font-family: 'Ubuntu', sans-serif;
+            position: relative;
+            color: $white;
+
+            &:not(:last-child)
+            {
+                padding-right: 3.5rem;
+            }
+
+            cursor: pointer;
+            display: inline-block;
+            
+
+        }
+    }
+
+
+    &__buttons
+    {
+        a 
+        {
+            display: inline-block;
+            
+            &:not(:last-child)
+            {
+                margin-right: 2rem;
+            }
+        }
+
+        
+    }
+
+    &__login
+    {
+        color: $white;
+    }
+
+    &__signup
+    {
+        display: inline-block;
+        color: $lightRed;
+        font-weight: 700;
+        letter-spacing: 1px;
+        
+        background-color: $white;
+
+        padding: 0.9375rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+    }
+
+    
+    //hide class
+
+    &__dropdown
+    {
+        
+        a  
+        {
+            // margin-bottom: 2.1875rem;
+            
+            transition: all 300ms ease-in-out;
+            img 
+            {
+                margin-left: 0.5rem;
+                transition: all 300ms ease-in-out;
+            }
+           
+        }
+
+        &:hover
+        {
+            >a 
+            {
+                text-decoration: underline;
+
+                img 
+                {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .header__dropdownContent
+            {
+                display: block;
+                // opacity: 100%;
+            }
+
+
+        }
+
+    
+    }
+    
+
+    &__dropdownContent
+    {
+        position: absolute;
+        display: none;
+        // opacity: 0;
+        width: 10.625rem;
+        // top: 2.1875rem;
+        
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 2.1875rem;
+        padding-bottom: 2.1875rem;
+
+        border-radius: 5px;
+
+        background-color: $white;
+        a 
+        {
+            display: block;
+            color: $veryDarkBlackBlue!important;
+            
+            letter-spacing: 1px;
+            
+
+            &:not(:last-child)
+            {
+                margin-bottom: 1.375rem;
+            }
+            &:hover
+            {
+                font-weight: 500;
+            }
+            
+            
+        }
+
+        
+    }
+
+    //mobile menu
+
+    &__toggleBtn
+    {
+        >span 
+        {
+            display: block;
+            width: 35px;
+            height: 2px;
+            background-color: #fff;
+            transform-origin: 4.5px 1.5px;
+            
+            transition: all .3s ease-in-out;
+            &:not(:last-child)
+            {
+                margin-bottom: 7px;
+            }
+        }
+        cursor: pointer;
+
+        
+    }
+
+    &.toggle
+    {
+        .header__toggleBtn
+        {
+            >span:first-child 
+            {
+                transform: rotate(45deg);
+            }
+            >span:last-child
+            {
+                transform: rotate(-45deg);
+            }
+            >span:nth-child(2)
+            {
+                opacity: 0;
+            }
+        }
+
+        .header__mobileMenu
+        {
+            display: block;
+            opacity: 100%;
+        }
+
+    }
+
+    &__mobileLinks
+    {
+        border-bottom: 1px solid $grayishBlue;
+    }
+
+    &__mobileMenu
+    {
+        position: absolute;
+        display: none;
+        text-align: center;
+        width: 100%;
+        top: 7.8125rem;
+
+        padding: 2.1875rem 1.5rem;
+
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+
+
+        background-color: #fff;
+
+        border-radius: 5px;
+        box-shadow: 5px 5px 30px rgb(0 0 0 / 15%);
+    }
+
+
+    &__mobileDropdown
+    {
+        
+        a  
+        {
+            display: block;
+            color: $veryDarkBlackBlue;
+            &:not(:last-child)
+            {
+                margin-bottom: 1.875rem;
+            }
+            
+            transition: all 300ms ease-in;
+            img 
+            {
+                margin-left: 0.5rem;
+                transition: all 300ms ease-in;
+            }
+           
+        }
+
+        &.hide
+        {
+            .header__mobileDropdownContent
+            {
+                display: none;
+            }
+            
+            
+            
+        }
+
+        &.active
+        {
+            a img
+            {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+
+
+    &__mobileDropdownContent
+    {
+        
+        // width: 10.625rem;
+        width: 100%;
+        // top: 2.1875rem;
+        
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 2.1875rem;
+        padding-bottom: 2.1875rem;
+
+        margin-bottom: 1.5625rem;
+
+        border-radius: 5px;
+
+        background-color: hsl(353, 100%, 62%,7%);
+        a 
+        {
+            display: block;
+            color: $veryDarkBlackBlue!important;
+            
+            letter-spacing: 1px;
+            
+
+            &:not(:last-child)
+            {
+                margin-bottom: 1.375rem;
+            }
+          
+            
+            
+        }
+
+        
+    }
+
+    &__mobileButtons
+    {
+     
+        a 
+        {
+            display: block;
+            
+            &:not(:last-child)
+            {
+                margin-right: 2rem;
+            }
+        }
+
+        margin-top: 2.1875rem;
+
+        
+    }
+
+    &__mobileLogin
+    {
+        
+        color: $veryDarkBlackBlue;
+        margin-bottom: 1.375rem;
+
+    }
+
+    &__mobileSignup
+    {
+        text-align: center;
+        
+        color: $white;
+        font-weight: 700;
+        letter-spacing: 1px;
+        
+        background-color: $lightRed;
+
+        padding: 0.9375rem 2.5rem;
+        border: none;
+        border-radius: 50px;
+    }
+
+    &__heading
+    {
+        text-align: center;
+        color: $white;
+        
+        margin-bottom: 1.125rem;
+
+    }
+
+    &__subHeading
+    {
+        text-align: center;
+        color: $white;
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+    }
+
+
+    &__ctaButtons
+    {
+        padding-bottom: 9.6875rem;
+        .for-free
+        {
+            // display: block;
+            color: $lightRed;
+            font-weight: 500;
+            background-color: $white;
+    
+            padding: 1rem 1.125rem;
+    
+            border: none;
+            border-radius: 50px;
+
+            margin-right: 2rem;
+            
+
+        }
+
+        .learn-more
+        {
+            // display: block;
+            color: $white;
+            font-weight: 500;
+            background-color: transparent;
+    
+            padding: 1rem 1.5rem;
+    
+            border: 1px solid $white;
+            border-radius: 50px;
+
+        }
+
+    }
+
+    
+    
+}
+

@@ -1,0 +1,107 @@
+.feature
+{
+    &-wrapper
+    {
+        overflow: hidden;
+      
+    }
+    text-align: center;
+
+
+    padding-bottom: 15.1875rem;
+    @include breakpoint-up(large)
+    {
+        height: 925px;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    &__headline
+    {
+        color: $veryDarkBlackBlue;
+
+     
+        @include breakpoint-up(large)
+        {
+            margin-bottom: 6.875rem;
+        }
+    }
+
+    &__container
+    {
+        @include breakpoint-up(large)
+        {
+            text-align: start;
+            display: flex;
+            align-items: center;
+            gap: 10%;
+        }
+    }
+
+    &__image
+    {
+        position: relative;
+        
+        order: 2;
+        flex: 50%;
+        @include breakpoint-down(medium)
+        {
+            background-image: url('../../images/illustration-editor-mobile.svg');
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        
+        }
+        width: 100%;
+        height: 20.625rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center center;
+        img 
+        {
+            @include breakpoint-up(large)
+            {
+                width: 190%;
+                display: block;
+                margin-top: -270px;
+                margin-left: -40px;
+            }
+        }
+
+    }
+
+
+    &__text
+    {
+        order: 1;
+        flex: 50%;
+        @include breakpoint-down(medium)
+        {
+            margin-bottom: 3rem;
+
+        }
+    }
+
+    &__heading
+    {
+        h3{
+            color: $veryDarkBlackBlue;
+
+            margin-bottom: 1.5rem;
+            @include breakpoint-up(large)
+            {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__desc:not(:last-child)
+    {
+        padding-bottom: 3rem;
+        @include breakpoint-up(large)
+        {
+            padding-bottom: 5rem;
+        }
+    }
+
+
+}
